@@ -1,0 +1,16 @@
+---
+import { getCategories, iconCategory } from "../services/categories";
+import CategoryCard from "./CategoryCard.astro";
+
+const categories = await getCategories();
+---
+
+<div
+  class="grid w-[90%] md:grid-cols-2 2xl:grid-cols-4 md:w-[80%] mx-auto my-10 gap-5"
+>
+  {
+    categories.map((category) => (
+      <CategoryCard category={category} icon={iconCategory[category]} />
+    ))
+  }
+</div>

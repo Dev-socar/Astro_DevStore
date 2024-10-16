@@ -1,0 +1,18 @@
+---
+interface Props {
+  filled: boolean;
+}
+
+const { filled } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class={`h-5 w-5 ${filled ? "text-yellow-500" : "text-gray-300"}`}
+  fill="currentColor"
+  viewBox="0 0 20 20"
+>
+  <path
+    d="M10 15.27L16.18 19l-1.64-7.03L19 7.24l-7.19-.61L10 0 8.19 6.63 1 7.24l5.46 4.73L4.82 19z"
+  ></path>
+</svg>

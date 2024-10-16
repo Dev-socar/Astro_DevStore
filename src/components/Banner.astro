@@ -1,0 +1,32 @@
+---
+const category = "women's-clothing";
+---
+
+<div class="banner w-full lg:h-[30rem] grid items-center justify-center p-10 lg:p-0">
+  <div class="flex flex-col justify-center items-center gap-5">
+    <p class="uppercase font-semibold text-center">
+      Exclusive deal: 20 off Women's Clothing
+    </p>
+    <h2 class="text-center text-4xl font-bold">
+      Upcoming Reunion Fitness Apparel
+    </h2>
+    <a
+      href={`/category/${category}`}
+      class="py-3 px-10 border rounded border-orange-500 uppercase font-semibold text-sm hover:text-white transition-all"
+      >Shop Now</a
+    >
+  </div>
+</div>
+
+<style>
+  .banner {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("banner.jpg");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProductDetails from "../../components/ProductDetails.astro"
+import { getProductDetails, getStaticPaths } from "../../services/products";
+
+
+export { getStaticPaths };
+const { product: productId }: { product: string } = Astro.params;
+
+const product = await getProductDetails(productId);
+const {
+  rating: { rate, count },
+} = product;
+
+---
+
+<Layout title={product.title} header={false}>
+  <main class="mt-10 w-[90%] md:w-[85%] mx-auto">
+    <div class="grid md:grid-cols-2 p-2">
+      <ProductDetails product={product} count={count} rate={rate}  />
+    </div>
+  </main>
+</Layout>

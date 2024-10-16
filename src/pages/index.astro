@@ -1,0 +1,18 @@
+---
+import Banner from "../components/Banner.astro";
+import CategoriesCards from "../components/CategoriesCards.astro";
+
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home" header>
+  <main class="mt-10 lg:mt-20">
+    <h2 class="text-center text-4xl lg:text-6xl font-bold">
+      Here you found everything
+    </h2>
+    <CategoriesCards />
+  </main>
+  <section class="mt-10 lg:mt-20">
+    <Banner />
+  </section>
+</Layout>

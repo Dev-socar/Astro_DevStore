@@ -1,0 +1,49 @@
+---
+
+import Navegation from "./Navegation.astro";
+
+interface Props {
+  header: boolean;
+}
+const { header } = Astro.props;
+---
+
+<header>
+  <div
+    class="p-5 flex flex-col gap-5 items-center text-center md:gap-0 md:flex-row md:justify-center md:items-center bg-blue-500 md:sticky md:top-0 md:z-10"
+  >
+    <Navegation />
+  </div>
+  {
+    header ? (
+      <section class="grid md:grid-cols-2 mt-10 p-5">
+        <div class="flex justify-center items-center">
+          <div class="lg:w-8/12 flex flex-col gap-5">
+            <h1 class="text-4xl lg:text-6xl font-semibold">
+              Elevate your style with curated essentials
+            </h1>
+            <p class="text-xl lg:text-2xl">
+              Explore premium clothing, accessories, and more for a fashionable,
+              effortless lifestyle every day.
+            </p>
+            <a
+              href="/products/"
+              class="bg-orange-500 text-white text-xl border py-3 rounded hover:bg-orange-100 hover:border-orange-500 hover:text-orange-500 transition-all px-2 text-center block lg:w-1/2"
+            >
+              All Products
+            </a>
+          </div>
+        </div>
+        <div class="clip-path-custom hidden lg:block">
+          <img src="header.jpg" alt="Imagen de Header de ropa" />
+        </div>
+      </section>
+    ) : null
+  }
+</header>
+
+<style>
+  .clip-path-custom {
+    clip-path: polygon(0 0, 65% 0, 100% 100%, 35% 100%);
+  }
+</style>

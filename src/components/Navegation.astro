@@ -1,0 +1,19 @@
+---
+import NavegationLink from "./NavegationLink.astro"
+
+
+const paths = [
+    {
+        url: '/',
+        label: 'Home'
+    },
+    {
+        url: '/products/',
+        label: 'Products'
+    }
+]
+---
+<nav class="flex flex-col gap-2 md:gap-5  md:flex-row ">
+    {paths.map(path => <NavegationLink url={path.url} label={path.label} />)}
+</nav>
+

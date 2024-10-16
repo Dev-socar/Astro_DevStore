@@ -1,0 +1,49 @@
+---
+import Star from "./Star.astro";
+
+interface Product {
+  id: number;
+  image: string;
+  title: string;
+  price: number;
+  description: string;
+}
+
+interface Props {
+  product: Product;
+  rate: number;
+  count: number;
+}
+
+const { product, rate, count } = Astro.props;
+---
+
+<div class="md:size-96 my-0 mx-auto">
+  <img
+    transition:name={`img-${product.id}`}
+    loading="lazy"
+    class="size-full"
+    src={product.image}
+    alt=`Imagen del producto ${product.title}`
+    title=`Imagen del producto ${product.title}`
+  />
+</div>
+<div class="flex flex-col gap-2">
+  <h3 class="text-2xl font-semibold">{product.title}</h3>
+  <div class="flex items-center mt-2">
+    {
+      Array.from({ length: 5 }, (_, index) => (
+        <Star filled={index < Math.round(rate)} />
+      ))
+    }
+    <span class="ml-2 text-gray-600">({count} reviews)</span>
+  </div>
+  <p class="text-blue-600 font-bold text-2xl">
+    <sup>$</sup>{product.price}<sup>99</sup>
+  </p>
+
+  <p>{product.description}</p>
+  <button class="p-2 rounded-lg bg-orange-500 text-white w-full md:w-max"
+    >Add to Cart</button
+  >
+</div>
